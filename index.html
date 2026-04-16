@@ -10,7 +10,7 @@
 <meta property="og:image" content="images/splash.jpg">
 <link rel="icon" href="images/favicon.ico">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@400;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@400;600;700&display=swap');
 
   :root {
     --bg: #0a0907;
@@ -28,6 +28,8 @@
 
   body {
     font-family: 'EB Garamond', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.7;
     background: var(--bg);
     color: var(--cream);
     min-height: 100vh;
@@ -226,7 +228,7 @@
     padding: 24px;
     max-width: 500px;
     margin: 0 auto 40px;
-    font-family: 'Courier New', monospace;
+    font-family: 'Courier Prime', 'Courier New', monospace;
     font-size: 0.85rem;
     line-height: 1.4;
     color: var(--cream-dim);
@@ -352,7 +354,7 @@
 
   /* ── Mobile ─────────────────────────────────────────── */
   @media (max-width: 600px) {
-    .cards { grid-template-columns: 1fr; }
+    .cards { grid-template-columns: 1fr !important; }
     .steps { grid-template-columns: 1fr 1fr; }
     .stats-bar { gap: 32px; }
     .hero { min-height: 90vh; }
@@ -367,7 +369,7 @@
 <div class="hero">
   <img src="images/logo_text.png" alt="Pistols at Dawn" class="logo">
   <h1>Settle it in Discord</h1>
-  <p>Pistols at Dawn is an on-chain duelling game where honour is earned at ten paces and disputes are settled in gunpowder. This bot brings the full game to Discord; same mechanics, same depth, same 34-card environment deck. Challenge someone, pick your cards blind, and watch the duel play out step by step. No wallets. No gas. Just flintlocks.</p>
+  <p>Pistols at Dawn is a duelling game where honour is earned at ten paces. This bot brings the full game to Discord — same mechanics, same depth. Challenge someone, pick your cards blind, and watch the duel play out. No wallets. No gas. Just flintlocks.</p>
 
   <a href="https://discord.com/oauth2/authorize?client_id=1477211104454377613&permissions=277025770560&scope=bot%20applications.commands" class="cta">
     <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028 14.09 14.09 0 001.226-1.994.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03z"/></svg>
@@ -381,24 +383,19 @@
 <!-- WHAT IS IT                                              -->
 <!-- ═══════════════════════════════════════════════════════ -->
 <section>
-  <h2>What is it</h2>
-  <p class="sub">Pistols at Dawn brings the on-chain duelling game to Discord. Same mechanics, same depth; no contracts, no gas, no wallets.</p>
+  <h2>Classic Duel</h2>
+  <p class="sub">Both duelists secretly pick four cards. Cards lock. The duel resolves step by step. Three HP. One round. Someone falls.</p>
 
-  <div class="cards">
+  <div class="cards" style="grid-template-columns: repeat(2, 1fr);">
+    <div class="card">
+      <div class="icon">&#128299;</div>
+      <h3>The Pistols Round</h3>
+      <p>Each duelist picks a step to fire (1–10) and a step to dodge. A 34-card environment deck shuffles fresh every duel — one card drawn per step, swinging damage and hit chance as the paces count down. Fire early for a clean shot before the deck turns on you, or fire late and let the cards stack in your favour. You also pick a tactic card that modifies the field before the first step: an Insult rattles their aim, a Coin Toss blocks the first nasty surprise, Vengeful adds raw damage. Three HP each. No healing. Whoever's still standing moves on.</p>
+    </div>
     <div class="card">
       <div class="icon">&#9876;&#65039;</div>
-      <h3>Classic Duel</h3>
-      <p>Both duelists secretly pick four cards: when to fire, when to dodge, a tactic, and a blade. Cards lock, the duel resolves step by step. Three HP. One round. Someone falls.</p>
-    </div>
-    <div class="card">
-      <div class="icon">&#127183;</div>
-      <h3>34-Card Environment Deck</h3>
-      <p>Every duel shuffles a fresh deck. One card drawn per step; damage up, hit chance down, or the rare All Shots Miss that ends careers. The deck shapes the duel more than the duelists do.</p>
-    </div>
-    <div class="card">
-      <div class="icon">&#128481;&#65039;</div>
-      <h3>Blades Phase</h3>
-      <p>Survive the pistols and the blades come out. Rock-paper-scissors with stat modifiers baked in. Seppuku gives the strongest pre-shot buff in the game; at the cost of your life if both survive.</p>
+      <h3>The Blades Round</h3>
+      <p>If both duelists survive the pistols, the blades come out. Each player picks one of four blades before the duel begins — Pocket Pistol, Behead, Grapple, or Seppuku. Every blade gives a passive stat modifier during the pistols round, then resolves as sudden-death rock-paper-scissors if it reaches this phase. Pocket Pistol beats Behead. Behead beats Grapple. Grapple beats Pocket Pistol. Same blade vs same: both die. Seppuku gives the strongest pre-shot buff in the game — +20% hit and +1 damage — but you always die in the blade clash. Win in pistols or don't win at all.</p>
     </div>
   </div>
 </section>
@@ -502,11 +499,8 @@
 <!-- ASCII PREVIEW                                           -->
 <!-- ═══════════════════════════════════════════════════════ -->
 <section style="padding-top: 0;">
-  <div class="preview">    o ]          [ o
-    /|\          /|/
-    < \          / >
-    lzg        PARSA</div>
-  <p style="text-align: center; color: var(--cream-dim); font-style: italic; font-size: 0.95rem;">Duels play out as ASCII animations; right in your Discord channel.</p>
+  <div class="preview" id="duel-anim" style="min-height: 7.5em;"></div>
+  <p style="text-align: center; color: var(--cream-dim); font-style: italic; font-size: 0.95rem;">Duels play out as ASCII animations — right in your Discord channel.</p>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════ -->
@@ -538,11 +532,6 @@
       <p>Missed the duel? Replay the animation or view the full combat log with every env card, damage number, and stat change.</p>
     </div>
     <div class="card">
-      <div class="icon">&#128172;</div>
-      <h3>400 Cheeky Quotes</h3>
-      <p>Every duel result, refusal, withdrawal, and expiry gets a unique line. Dry, wry, and never the same twice.</p>
-    </div>
-    <div class="card">
       <div class="icon">&#127775;</div>
       <h3>On-Chain Parity</h3>
       <p>Same 34-card deck, same blades mechanics, same flat 50% hit chance as the on-chain game. Verified against the Cairo source.</p>
@@ -553,12 +542,11 @@
 <!-- ═══════════════════════════════════════════════════════ -->
 <!-- STATS                                                   -->
 <!-- ═══════════════════════════════════════════════════════ -->
-<section style="padding-top: 20px; padding-bottom: 20px;">
+<!-- Stats: set display to "" and fill in numbers when ready -->
+<section id="stats-section" style="padding-top: 20px; padding-bottom: 20px; display: none;">
   <div class="stats-bar">
-    <div class="stat"><div class="num">16</div><div class="label">Commands</div></div>
-    <div class="stat"><div class="num">34</div><div class="label">Env Cards</div></div>
-    <div class="stat"><div class="num">400</div><div class="label">Quotes</div></div>
-    <div class="stat"><div class="num">10</div><div class="label">Premises</div></div>
+    <div class="stat"><div class="num">—</div><div class="label">Servers</div></div>
+    <div class="stat"><div class="num">—</div><div class="label">Duels Fought</div></div>
   </div>
 </section>
 
@@ -585,6 +573,105 @@
   </div>
   <p>Built by <a href="https://underware.gg">Underware</a> &middot; Pistols at Dawn &middot; 2026</p>
 </footer>
+
+<script>
+(function () {
+  var el = document.getElementById('duel-anim');
+  if (!el) return;
+
+  var frames = [
+    [
+      "      PISTOLS ROUND       ",
+      "   o ]            [ o     ",
+      "  /|\\            /|\\   ",
+      "  < \\            / >    ",
+      "   lzg          PARSA     "
+    ],
+    [
+      "      \u26A1 DMG UP \u26A1          ",
+      "   o ]            [ o     ",
+      "  /|\\            /|\\   ",
+      "  < \\            / >    ",
+      "   lzg          PARSA     "
+    ],
+    [
+      "        STEP 3            ",
+      "   o ]\u2501\u2501\u2501\u25B6        [ o     ",
+      "  /|\\            /|\\   ",
+      "  < \\            / >    ",
+      "   lzg   FIRE!  PARSA     "
+    ],
+    [
+      "          HIT!            ",
+      "   o ]          \u2726  o     ",
+      "  /|\\           \\|\\   ",
+      "  < \\            / >    ",
+      "   lzg   \u2665\u2665\u2661   PARSA     "
+    ],
+    [
+      "    \u26A1 CHANCES UP \u26A1       ",
+      "   o ]            [ o     ",
+      "  /|\\            /|\\   ",
+      "  < \\            / >    ",
+      "   lzg   \u2665\u2665\u2661   PARSA     "
+    ],
+    [
+      "        STEP 7            ",
+      "   o      \u25C0\u2501\u2501\u2501[ [ o     ",
+      "  /|\\            /|\\   ",
+      "  < \\            / >    ",
+      "   lzg   FIRE!  PARSA     "
+    ],
+    [
+      "         MISS!            ",
+      "   o ]            [ o     ",
+      "  /|\\            /|\\   ",
+      "  < \\            / >    ",
+      "   lzg   \u2665\u2665\u2661   PARSA     "
+    ],
+    [
+      "     \u2694 BLADES ROUND \u2694     ",
+      "   o  ]\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500[  o     ",
+      "  /|\\            /|\\   ",
+      "  < \\            / >    ",
+      "   lzg          PARSA     "
+    ],
+    [
+      "       BEHEAD!            ",
+      "       o  \u2694  o            ",
+      "      /|\\ /|\\           ",
+      "      / \\ / \\           ",
+      "   lzg       PARSA        "
+    ],
+    [
+      "       VICTORY            ",
+      "  \\o/           _o_      ",
+      "   |            /|        ",
+      "  / \\             \\     ",
+      "   lzg  WINS!  PARSA      "
+    ]
+  ];
+
+  var idx = 0;
+  var hold = 0;
+
+  function step() {
+    el.textContent = frames[idx].join('\n');
+    if (idx === frames.length - 1) {
+      hold++;
+      if (hold >= 3) {
+        idx = 0;
+        hold = 0;
+      }
+    } else {
+      idx++;
+    }
+  }
+
+  step();
+  setInterval(step, 1200);
+})();
+</script>
 
 </body>
 </html>
