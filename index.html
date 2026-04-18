@@ -3,14 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pistols at Dawn — Discord Bot</title>
+<title>Pistols at Dawn: Discord Bot</title>
 <meta name="description" content="Settle your disputes in Discord. A duelling game where honour is earned at ten paces.">
-<meta property="og:title" content="Pistols at Dawn — Discord Bot">
+<meta property="og:title" content="Pistols at Dawn: Discord Bot">
 <meta property="og:description" content="Settle your disputes in Discord. A duelling game where honour is earned at ten paces.">
 <meta property="og:image" content="images/splash.jpg">
 <link rel="icon" href="images/favicon.ico">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@400;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+
+  /* EB Garamond: self-hosted variable TTF (matches main game exactly) */
+  @font-face {
+    font-family: 'EB Garamond';
+    font-style: normal;
+    font-display: block;
+    src: url('fonts/EBGaramond-VariableFont_wght.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'EB Garamond';
+    font-style: italic;
+    font-display: block;
+    src: url('fonts/EBGaramond-Italic-VariableFont_wght.ttf') format('truetype');
+  }
+
+  /* Courier Prime: self-hosted (matches main game exactly) */
+  @font-face {
+    font-family: 'Courier Prime';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url('fonts/courierprime/u-450q2lgwslOqpF_6gQ8kELawFpWs39pvk.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Courier Prime';
+    font-style: normal;
+    font-weight: 700;
+    font-display: block;
+    src: url('fonts/courierprime/u-4k0q2lgwslOqpF_6gQ8kELY7pMT-Dfq9PrNX0.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Courier Prime';
+    font-style: italic;
+    font-weight: 400;
+    font-display: block;
+    src: url('fonts/courierprime/u-4n0q2lgwslOqpF_6gQ8kELawRZWMf6hPvhPQ.woff2') format('woff2');
+  }
 
   :root {
     --bg: #0a0907;
@@ -29,11 +66,15 @@
   body {
     font-family: 'EB Garamond', Georgia, serif;
     font-size: 17px;
-    line-height: 1.7;
+    font-weight: 500;
+    line-height: 1.6;
     background: var(--bg);
     color: var(--cream);
     min-height: 100vh;
     overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   /* ── Hero ────────────────────────────────────────────── */
@@ -75,7 +116,7 @@
   }
   .hero p {
     font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-    color: var(--cream-dim);
+    color: var(--cream);
     max-width: 560px;
     line-height: 1.6;
     font-style: italic;
@@ -126,14 +167,14 @@
   }
   section .sub {
     text-align: center;
-    color: var(--cream-dim);
+    color: var(--cream);
     font-style: italic;
     font-size: 1.1rem;
     margin-bottom: 40px;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.5;
+    line-height: 1.55;
   }
 
   /* ── Cards grid ─────────────────────────────────────── */
@@ -165,9 +206,9 @@
     margin-bottom: 8px;
   }
   .card p {
-    font-size: 0.95rem;
-    color: var(--cream-dim);
-    line-height: 1.5;
+    font-size: 1rem;
+    color: var(--cream);
+    line-height: 1.65;
   }
 
   /* ── How it works ───────────────────────────────────── */
@@ -204,9 +245,9 @@
     margin-bottom: 8px;
   }
   .step p {
-    font-size: 0.9rem;
-    color: var(--cream-dim);
-    line-height: 1.4;
+    font-size: 0.95rem;
+    color: var(--cream);
+    line-height: 1.55;
   }
 
   /* ── Pistol divider ─────────────────────────────────── */
@@ -229,9 +270,9 @@
     max-width: 500px;
     margin: 0 auto 40px;
     font-family: 'Courier Prime', 'Courier New', monospace;
-    font-size: 0.85rem;
-    line-height: 1.4;
-    color: var(--cream-dim);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--cream);
     text-align: center;
     white-space: pre;
   }
@@ -275,7 +316,7 @@
     margin-bottom: 16px;
   }
   .bottom-cta p {
-    color: var(--cream-dim);
+    color: var(--cream);
     font-size: 1.1rem;
     font-style: italic;
     margin-bottom: 28px;
@@ -303,7 +344,7 @@
     width: 100%;
     border-collapse: collapse;
     margin-top: 12px;
-    font-size: 0.88rem;
+    font-size: 0.95rem;
   }
   .card-table th {
     text-align: left;
@@ -317,10 +358,10 @@
     border-bottom: 1px solid var(--border);
   }
   .card-table td {
-    padding: 6px 8px;
+    padding: 8px 8px;
     border-bottom: 1px solid rgba(255,255,255,0.03);
-    color: var(--cream-dim);
-    line-height: 1.4;
+    color: var(--cream);
+    line-height: 1.55;
   }
   .card-table td strong { color: var(--cream); }
   .card-table .copies { color: var(--gold-dim); font-family: 'Space Grotesk', sans-serif; font-weight: 600; }
@@ -345,11 +386,10 @@
     margin-bottom: 8px;
   }
   .detail-block > p {
-    color: var(--cream-dim);
-    font-size: 0.95rem;
-    line-height: 1.5;
+    color: var(--cream);
+    font-size: 1rem;
+    line-height: 1.65;
     margin-bottom: 16px;
-    font-style: italic;
   }
 
   /* ── Mobile ─────────────────────────────────────────── */
@@ -369,7 +409,7 @@
 <div class="hero">
   <img src="images/logo_text.png" alt="Pistols at Dawn" class="logo">
   <h1>Settle it in Discord</h1>
-  <p>Pistols at Dawn is a duelling game where honour is earned at ten paces. This bot brings the full game to Discord — same mechanics, same depth. Challenge someone, pick your cards blind, and watch the duel play out. No wallets. No gas. Just flintlocks.</p>
+  <p>Pistols at Dawn is a duelling game where honour is earned at ten paces. This bot brings the full game to Discord, same mechanics, same depth. Challenge someone, pick your cards blind, and watch the duel play out. No wallets. No gas. Just flintlocks.</p>
 
   <a href="https://discord.com/oauth2/authorize?client_id=1477211104454377613&permissions=277025770560&scope=bot%20applications.commands" class="cta">
     <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028 14.09 14.09 0 001.226-1.994.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03z"/></svg>
@@ -390,12 +430,12 @@
     <div class="card">
       <div class="icon">&#128299;</div>
       <h3>The Pistols Round</h3>
-      <p>Each duelist picks a step to fire (1–10) and a step to dodge. A 34-card environment deck shuffles fresh every duel — one card drawn per step, swinging damage and hit chance as the paces count down. Fire early for a clean shot before the deck turns on you, or fire late and let the cards stack in your favour. You also pick a tactic card that modifies the field before the first step: an Insult rattles their aim, a Coin Toss blocks the first nasty surprise, Vengeful adds raw damage. Three HP each. No healing. Whoever's still standing moves on.</p>
+      <p>Each duelist picks a step to fire (1–10) and a step to dodge. A 34-card environment deck shuffles fresh every duel, one card drawn per step, swinging damage and hit chance as the paces count down. Fire early for a clean shot before the deck turns on you, or fire late and let the cards stack in your favour. You also pick a tactic card that modifies the field before the first step: an Insult rattles their aim, a Coin Toss blocks the first nasty surprise, Vengeful adds raw damage. Three HP each. No healing. Whoever's still standing moves on.</p>
     </div>
     <div class="card">
       <div class="icon">&#9876;&#65039;</div>
       <h3>The Blades Round</h3>
-      <p>If both duelists survive the pistols, the blades come out. Each player picks one of four blades before the duel begins — Pocket Pistol, Behead, Grapple, or Seppuku. Every blade gives a passive stat modifier during the pistols round, then resolves as sudden-death rock-paper-scissors if it reaches this phase. Pocket Pistol beats Behead. Behead beats Grapple. Grapple beats Pocket Pistol. Same blade vs same: both die. Seppuku gives the strongest pre-shot buff in the game — +20% hit and +1 damage — but you always die in the blade clash. Win in pistols or don't win at all.</p>
+      <p>If both duelists survive the pistols, the blades come out. Each player picks one of four blades before the duel begins: Pocket Pistol, Behead, Grapple, or Seppuku. Every blade gives a passive stat modifier during the pistols round, then resolves as sudden-death rock-paper-scissors if it reaches this phase. Pocket Pistol beats Behead. Behead beats Grapple. Grapple beats Pocket Pistol. Same blade vs same: both die. Seppuku gives the strongest pre-shot buff in the game, +20% hit and +1 damage, but you always die in the blade clash. Win in pistols or don't win at all.</p>
     </div>
   </div>
 </section>
@@ -445,7 +485,7 @@
 
     <!-- ENV CARDS -->
     <div class="detail-block">
-      <h3>&#127183; Environment Deck &mdash; 34 Cards</h3>
+      <h3>&#127183; Environment Deck: 34 Cards</h3>
       <p>Shuffled fresh every duel. One card drawn per step. Affects both duelists independently, but only until they fire. The longer you wait, the more the deck shapes your fate.</p>
       <table class="card-table">
         <tr><th>Card</th><th>Copies</th><th>Effect</th></tr>
@@ -460,12 +500,12 @@
         <tr><td><strong style="color: #9b7dd4;">Double Tactics</strong></td><td class="copies">1</td><td>Your tactic card fires twice.</td></tr>
         <tr><td><strong style="color: #9b7dd4;">No Tactics</strong></td><td class="copies">1</td><td>Your tactic card is erased.</td></tr>
       </table>
-      <p style="margin-top: 12px; font-size: 0.88rem; font-style: normal;">20 positive. 10 negative. 4 specials. The deck is 2:1 in your favour; but All Shots Miss only needs to show up once.</p>
+      <p style="margin-top: 12px; font-size: 0.95rem; font-style: normal; color: var(--cream);">20 positive. 10 negative. 4 specials. The deck is 2:1 in your favour; but All Shots Miss only needs to show up once.</p>
     </div>
 
     <!-- TACTICS CARDS -->
     <div class="detail-block">
-      <h3>&#127183; Tactics &mdash; Pick 1 of 6</h3>
+      <h3>&#127183; Tactics: Pick 1 of 6</h3>
       <p>Applied before the shooting starts. Shape the gunfight before the first step. No skip option; you commit to a tactic.</p>
       <table class="card-table">
         <tr><th>Card</th><th>Effect</th><th>Detail</th></tr>
@@ -480,7 +520,7 @@
 
     <!-- BLADES CARDS -->
     <div class="detail-block">
-      <h3>&#9876;&#65039; Blades &mdash; Pick 1 of 4</h3>
+      <h3>&#9876;&#65039; Blades: Pick 1 of 4</h3>
       <p>Blades do two jobs at once: modify your stats before the shots phase, and resolve as sudden-death if both survive. No skip. You bring a blade to every duel.</p>
       <table class="card-table">
         <tr><th>Card</th><th>Pre-Shot Effect</th><th>Clash</th><th>Strategy</th></tr>
@@ -489,7 +529,7 @@
         <tr><td><strong style="color: var(--gold);">Behead</strong></td><td>+1 damage</td><td>Beats Grapple</td><td>Aggressive. Your shot hits harder.</td></tr>
         <tr><td><strong style="color: #00cc77;">Grapple</strong></td><td>Opponent -1 damage</td><td>Beats Pocket Pistol</td><td>Can reduce opponent to 0 damage. Base is 1; Grapple makes it nothing.</td></tr>
       </table>
-      <p style="margin-top: 12px; font-size: 0.88rem; font-style: normal;">Same card vs same: both die. Seppuku vs anything: Seppuku dies. The triangle: Pocket Pistol beats Behead beats Grapple beats Pocket Pistol.</p>
+      <p style="margin-top: 12px; font-size: 0.95rem; font-style: normal; color: var(--cream);">Same card vs same: both die. Seppuku vs anything: Seppuku dies. The triangle: Pocket Pistol beats Behead beats Grapple beats Pocket Pistol.</p>
     </div>
 
   </div>
@@ -500,7 +540,7 @@
 <!-- ═══════════════════════════════════════════════════════ -->
 <section style="padding-top: 0;">
   <div class="preview" id="duel-anim" style="min-height: 7.5em;"></div>
-  <p style="text-align: center; color: var(--cream-dim); font-style: italic; font-size: 0.95rem;">Duels play out as ASCII animations — right in your Discord channel.</p>
+  <p style="text-align: center; color: var(--cream); font-style: italic; font-size: 1rem;">Duels play out as ASCII animations, right in your Discord channel.</p>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════ -->
@@ -545,8 +585,8 @@
 <!-- Stats: set display to "" and fill in numbers when ready -->
 <section id="stats-section" style="padding-top: 20px; padding-bottom: 20px; display: none;">
   <div class="stats-bar">
-    <div class="stat"><div class="num">—</div><div class="label">Servers</div></div>
-    <div class="stat"><div class="num">—</div><div class="label">Duels Fought</div></div>
+    <div class="stat"><div class="num">?</div><div class="label">Servers</div></div>
+    <div class="stat"><div class="num">?</div><div class="label">Duels Fought</div></div>
   </div>
 </section>
 
