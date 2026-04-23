@@ -322,6 +322,53 @@
     margin-bottom: 28px;
   }
 
+  /* ── Admin note (moderation-bot whitelist) ─────────── */
+  .admin-note {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    border-top: 1px solid rgba(200, 164, 78, 0.2);
+    border-bottom: 1px solid rgba(200, 164, 78, 0.2);
+    background: rgba(42, 34, 24, 0.35);
+  }
+  .admin-note .note-label {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold-dim);
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .admin-note h3 {
+    font-size: 1.4rem;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .admin-note p {
+    color: var(--cream);
+    font-size: 1rem;
+    line-height: 1.65;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .admin-note code {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.82rem;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(200, 164, 78, 0.2);
+    color: var(--gold);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .admin-note .examples {
+    font-size: 0.88rem;
+    color: var(--cream-dim);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
   /* ── Footer ─────────────────────────────────────────── */
   footer {
     text-align: center;
@@ -589,6 +636,16 @@
     <div class="stat"><div class="num">?</div><div class="label">Duels Fought</div></div>
   </div>
 </section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- ADMIN NOTE — MODERATION-BOT WHITELIST                   -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="admin-note">
+  <div class="note-label">Before you invite</div>
+  <h3>&#127481;&#65039; A quick note for server admins</h3>
+  <p>If your server has a moderation bot &mdash; <strong>Wick</strong>, <strong>Dyno</strong>, <strong>MEE6</strong>, or similar &mdash; please <strong>whitelist Pistols at Dawn</strong> in its settings. The duel animation uses rapid message edits, and strict anti-spam rules can flag that as spam and silence the bot mid-duel.</p>
+  <p class="examples">Wick: <code>w!trust bot add 1477211104454377613</code> &middot; Dyno &amp; MEE6: add to the trusted-bots list in their dashboards. Also helps to place the Pistols role <strong>above</strong> your moderation bot's role under Server Settings &rarr; Roles.</p>
+</div>
 
 <!-- ═══════════════════════════════════════════════════════ -->
 <!-- BOTTOM CTA                                              -->
