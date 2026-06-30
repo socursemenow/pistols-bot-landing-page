@@ -641,7 +641,7 @@
   <div class="steps">
     <div class="step">
       <h3>Challenge</h3>
-      <p>Type <code>/duel @opponent</code> and pick your premise. Honour, blood, or nothing at all.</p>
+      <p>Type <code>/duel @opponent</code> for a specific target, or <code>/duel public</code> to throw an open callout anyone in the channel can claim. Pick your premise &mdash; honour, blood, or nothing at all.</p>
     </div>
     <div class="step">
       <h3>Pick your cards</h3>
@@ -738,7 +738,7 @@
     <div class="card">
       <div class="icon">&#128203;</div>
       <h3>Duel Queue</h3>
-      <p>Challenge multiple opponents. If someone's busy, the duel queues and auto-fires when both are free. No lost challenges.</p>
+      <p>Challenge multiple opponents. If someone's busy, the duel queues and auto-fires when both are free. Optionally pre-commit your cards so the duel resolves the instant your turn comes up. No lost challenges.</p>
     </div>
     <div class="card">
       <div class="icon">&#128202;</div>
@@ -759,6 +759,11 @@
       <div class="icon">&#127775;</div>
       <h3>On-Chain Parity</h3>
       <p>Same 34-card deck, same blades mechanics, same flat 50% hit chance as the on-chain game. Verified against the Cairo source.</p>
+    </div>
+    <div class="card">
+      <div class="icon">&#127918;</div>
+      <h3>Wallet-Linked Players</h3>
+      <p>Link your Cartridge controller or wallet address. Challenge anyone in the wider Pistols ecosystem with <code>/duel wallet 0x...</code> or <code>/duel controller username</code>. Token balance lookups built in.</p>
     </div>
   </div>
 </section>
@@ -840,7 +845,7 @@
               <tr>
                 <td class="setting">accept_timeout</td>
                 <td class="default">5 minutes</td>
-                <td>How long a challenge stays open before it expires unaccepted. Increase for servers where people aren't always online.</td>
+                <td>How long a challenge stays open before it expires unaccepted. Valid range: <strong>5 to 2880 minutes</strong> (48h). Increase for servers where people aren't always online. Set to <code>0</code> to clear a guild override and revert to the global default.</td>
               </tr>
               <tr>
                 <td class="setting">enabled</td>
