@@ -322,38 +322,77 @@
     margin-bottom: 28px;
   }
 
-  /* ── Admin note (moderation-bot whitelist) ─────────── */
-  .admin-note {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 48px 24px 80px;
-    border-top: 1px solid rgba(200, 164, 78, 0.2);
-    border-bottom: 1px solid rgba(200, 164, 78, 0.2);
-    background: rgba(42, 34, 24, 0.35);
+  /* ── Server admin guide ─────────────────────────────── */
+  .admin-guide {
+    background: rgba(42, 34, 24, 0.28);
+    border-top: 1px solid rgba(200, 164, 78, 0.18);
+    border-bottom: 1px solid rgba(200, 164, 78, 0.18);
+    padding: 72px 24px 80px;
+    position: relative;
   }
-  .admin-note .note-label {
+  .admin-guide .eyebrow {
+    text-align: center;
     font-family: 'JetBrains Mono', ui-monospace, monospace;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    letter-spacing: 2px;
     color: var(--gold-dim);
     margin-bottom: 10px;
-    text-align: center;
   }
-  .admin-note h3 {
-    font-size: 1.4rem;
+  .admin-guide .admin-inner {
+    max-width: 880px;
+    margin: 0 auto;
+  }
+  .admin-guide h2 { text-align: center; }
+  .admin-guide .sub {
+    text-align: center;
+    color: var(--cream-dim);
+    font-style: italic;
+    margin-bottom: 56px;
+  }
+
+  .admin-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .admin-step {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .admin-step .step-num {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 2.4rem;
+    font-style: italic;
     color: var(--gold);
-    text-align: center;
-    margin-bottom: 14px;
+    line-height: 1;
+    text-align: right;
+    border-right: 1px solid rgba(200, 164, 78, 0.25);
+    padding-right: 18px;
+    padding-top: 4px;
   }
-  .admin-note p {
+  .admin-step h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.05rem;
+    color: var(--gold);
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+  }
+  .admin-step p {
     color: var(--cream);
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.65;
-    text-align: center;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
   }
-  .admin-note code {
+  .admin-step p.tip {
+    color: var(--cream-dim);
+    font-size: 0.88rem;
+    font-style: italic;
+    line-height: 1.6;
+  }
+  .admin-step code {
     font-family: 'JetBrains Mono', ui-monospace, monospace;
     font-size: 0.82rem;
     background: rgba(0, 0, 0, 0.4);
@@ -362,11 +401,109 @@
     padding: 2px 8px;
     border-radius: 4px;
   }
-  .admin-note .examples {
+
+  .settings-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 14px;
     font-size: 0.88rem;
+  }
+  .settings-table th {
+    text-align: left;
+    color: var(--gold-dim);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 10px 10px;
+    border-bottom: 1px solid rgba(200, 164, 78, 0.22);
+  }
+  .settings-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: var(--cream);
+    line-height: 1.55;
+    vertical-align: top;
+  }
+  .settings-table td.setting {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    color: var(--gold);
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+  .settings-table td.default {
     color: var(--cream-dim);
-    max-width: 600px;
-    margin: 0 auto;
+    font-style: italic;
+    white-space: nowrap;
+    font-size: 0.85rem;
+  }
+
+  .does-doesnt {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 14px;
+  }
+  .does-doesnt h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.74rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .does-doesnt .does h4 { color: var(--gold); }
+  .does-doesnt .doesnt h4 { color: var(--cream-dim); }
+  .does-doesnt ul {
+    list-style: none;
+    padding: 0;
+  }
+  .does-doesnt li {
+    font-size: 0.92rem;
+    color: var(--cream);
+    line-height: 1.6;
+    padding: 6px 0 6px 22px;
+    position: relative;
+  }
+  .does-doesnt .does li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 700;
+  }
+  .does-doesnt .doesnt li::before {
+    content: '×';
+    position: absolute;
+    left: 0;
+    color: var(--cream-dim);
+    font-weight: 700;
+  }
+
+  @media (max-width: 640px) {
+    .admin-step {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .admin-step .step-num {
+      text-align: left;
+      border-right: none;
+      border-bottom: 1px solid rgba(200, 164, 78, 0.25);
+      padding-right: 0;
+      padding-bottom: 8px;
+      width: fit-content;
+    }
+    .does-doesnt {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .settings-table {
+      font-size: 0.82rem;
+    }
+    .settings-table th,
+    .settings-table td {
+      padding: 8px 6px;
+    }
   }
 
   /* ── Footer ─────────────────────────────────────────── */
@@ -638,14 +775,113 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<!-- ADMIN NOTE — MODERATION-BOT WHITELIST                   -->
+<!-- SERVER ADMIN GUIDE                                      -->
 <!-- ═══════════════════════════════════════════════════════ -->
-<div class="admin-note">
-  <div class="note-label">Before you invite</div>
-  <h3>&#127481;&#65039; A quick note for server admins</h3>
-  <p>If your server has a moderation bot &mdash; <strong>Wick</strong>, <strong>Dyno</strong>, <strong>MEE6</strong>, or similar &mdash; please <strong>whitelist Pistols at Dawn</strong> in its settings. The duel animation uses rapid message edits, and strict anti-spam rules can flag that as spam and silence the bot mid-duel.</p>
-  <p class="examples">Wick: <code>w!trust bot add 1477211104454377613</code> &middot; Dyno &amp; MEE6: add to the trusted-bots list in their dashboards. Also helps to place the Pistols role <strong>above</strong> your moderation bot's role under Server Settings &rarr; Roles.</p>
-</div>
+<section class="admin-guide">
+  <div class="admin-inner">
+    <div class="eyebrow">For server admins</div>
+    <h2>Server Admin Guide</h2>
+    <p class="sub">Everything you need to get Pistols at Dawn running in your server.</p>
+
+    <div class="admin-steps">
+
+      <div class="admin-step">
+        <div class="step-num">1</div>
+        <div>
+          <h3>Add the bot</h3>
+          <p>Use the invite link above &mdash; or the CTA below. It requests the exact permissions the bot needs: send messages, manage messages, embed links, attach files, read message history, and use slash commands.</p>
+          <p class="tip">Don't reduce them &mdash; the duel animation relies on rapid message edits and won't work without manage-messages.</p>
+        </div>
+      </div>
+
+      <div class="admin-step">
+        <div class="step-num">2</div>
+        <div>
+          <h3>Pick a duel channel</h3>
+          <p>After adding the bot, run <code>/setup</code> and set <code>duel_channel</code> to the channel where duels should play out. <strong>This is required</strong> &mdash; the bot won't post duel animations until a channel is set.</p>
+          <p class="tip">Pick a dedicated channel like <code>#the-duelling-grounds</code>. Duels generate a burst of message edits during the animation; a dedicated channel keeps it contained.</p>
+        </div>
+      </div>
+
+      <div class="admin-step">
+        <div class="step-num">3</div>
+        <div>
+          <h3>Whitelist the bot in your moderation bot</h3>
+          <p>If your server runs <strong>Wick</strong>, <strong>Dyno</strong>, <strong>MEE6</strong>, or a similar moderation bot, whitelist Pistols at Dawn before your first duel. The live ASCII animation uses rapid message edits, and anti-spam rules will flag and silence the bot mid-duel if it isn't trusted.</p>
+          <p class="tip"><strong>Wick:</strong> <code>w!trust bot add 1477211104454377613</code><br><strong>Dyno &amp; MEE6:</strong> add Pistols at Dawn to the trusted-bots list in their dashboards.<br>Also place the <strong>Pistols at Dawn role above your moderation bot's role</strong> under Server Settings &rarr; Roles. This prevents the mod bot from overriding the bot's permissions.</p>
+        </div>
+      </div>
+
+      <div class="admin-step">
+        <div class="step-num">4</div>
+        <div>
+          <h3>Available settings</h3>
+          <p>All settings are configured with <code>/setup</code>. Only users with the <strong>Manage Server</strong> permission can run <code>/setup</code>.</p>
+          <table class="settings-table">
+            <thead>
+              <tr><th>Setting</th><th>Default</th><th>What it does</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="setting">duel_channel</td>
+                <td class="default">none &mdash; required</td>
+                <td>The channel where duel animations post. Must be set before duels can run.</td>
+              </tr>
+              <tr>
+                <td class="setting">animation</td>
+                <td class="default">On</td>
+                <td>Enables the live ASCII duel animation. Turn off only if your mod bot keeps silencing the bot despite whitelisting.</td>
+              </tr>
+              <tr>
+                <td class="setting">speed</td>
+                <td class="default">Normal</td>
+                <td><strong>Normal</strong> &mdash; full animation. <strong>Compact</strong> &mdash; slower frames, fewer shot/death frames. <strong>Minimal</strong> &mdash; most aggressive pacing (1s/frame floor). Use Compact or Minimal if your server has rate-limit issues.</td>
+              </tr>
+              <tr>
+                <td class="setting">accept_timeout</td>
+                <td class="default">5 minutes</td>
+                <td>How long a challenge stays open before it expires unaccepted. Increase for servers where people aren't always online.</td>
+              </tr>
+              <tr>
+                <td class="setting">enabled</td>
+                <td class="default">On</td>
+                <td>Master on/off switch. When off, all bot commands are disabled server-wide. Useful during maintenance or if you need to pause the bot temporarily.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="admin-step">
+        <div class="step-num">5</div>
+        <div>
+          <h3>What the bot does and doesn't do</h3>
+          <div class="does-doesnt">
+            <div class="does">
+              <h4>Does</h4>
+              <ul>
+                <li>Post duel animations and results to the configured <code>duel_channel</code></li>
+                <li>Track win/loss stats per user (accessible with <code>/mystats</code>)</li>
+                <li>Queue challenges if an opponent is busy &mdash; duels auto-fire when both players are free</li>
+                <li>Use ephemeral (private) messages for card selection &mdash; no spoilers in the channel</li>
+              </ul>
+            </div>
+            <div class="doesnt">
+              <h4>Doesn't</h4>
+              <ul>
+                <li>Read or store message content outside of slash-command interactions</li>
+                <li>Require any channel permissions beyond the configured <code>duel_channel</code></li>
+                <li>DM users unprompted</li>
+                <li>Assign or modify roles</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- ═══════════════════════════════════════════════════════ -->
 <!-- BOTTOM CTA                                              -->
