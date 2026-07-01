@@ -593,7 +593,7 @@
 <div class="hero">
   <img src="images/logo_text.png" alt="Pistols at Dawn" class="logo">
   <h1>Settle it in Discord</h1>
-  <p>Pistols at Dawn is a duelling game where honour is earned at ten paces. This bot brings the full game to Discord, same mechanics, same depth. Challenge someone, pick your cards blind, and watch the duel play out. No wallets. No gas. Just flintlocks.</p>
+  <p>Pistols at Dawn is a duelling game your server actually plays. Challenge someone, pick your cards blind, and watch the duel play out &mdash; right in the channel. No wallets. No gas. Just flintlocks.</p>
 
   <a href="https://discord.com/oauth2/authorize?client_id=1477211104454377613&permissions=277025770560&scope=bot%20applications.commands" class="cta">
     <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028 14.09 14.09 0 001.226-1.994.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03z"/></svg>
@@ -602,6 +602,37 @@
 
   <p class="hero-sub">Free to use &middot; No wallet required &middot; <a href="https://pistols.gg">pistols.gg</a></p>
 </div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- WHY IT WORKS — admin benefit statements                 -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section>
+  <h2>Why it works</h2>
+  <p class="sub">A duel bot that pulls its own weight in your server.</p>
+
+  <div class="cards" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+    <div class="card">
+      <div class="icon">&#128293;</div>
+      <h3>Keeps your server active</h3>
+      <p>Duels are public. Every challenge plays out in the channel, pulling in spectators and sparking rematches. The bot does the community management for you.</p>
+    </div>
+    <div class="card">
+      <div class="icon">&#9889;</div>
+      <h3>Zero friction to start</h3>
+      <p>One invite link, one <code>/setup</code> command to pick your duel channel, and you're live. No dashboards. No configuration calls.</p>
+    </div>
+    <div class="card">
+      <div class="icon">&#128272;</div>
+      <h3>No wallets required</h3>
+      <p>Players don't need crypto, accounts, or anything outside Discord. If they're in your server, they can duel.</p>
+    </div>
+    <div class="card">
+      <div class="icon">&#128737;&#65039;</div>
+      <h3>Works with your moderation setup</h3>
+      <p>Compatible with Wick, Dyno, MEE6, and similar bots. One whitelist command and it runs clean alongside your existing setup.</p>
+    </div>
+  </div>
+</section>
 
 <!-- ═══════════════════════════════════════════════════════ -->
 <!-- WHAT IS IT                                              -->
@@ -653,70 +684,11 @@
     </div>
     <div class="step">
       <h3>Result</h3>
-      <p>Winner declared; full combat log available. Rematch button ready. The queue takes the next one.</p>
+      <p>Winner declared. Full combat log available. Rematch button ready.</p>
     </div>
   </div>
-</section>
 
-<!-- ═══════════════════════════════════════════════════════ -->
-<!-- THE CARDS                                               -->
-<!-- ═══════════════════════════════════════════════════════ -->
-<section>
-  <h2>The cards</h2>
-  <p class="sub">Every duelist picks four cards before the duel begins. No take-backs. No peeking. The environment does the rest.</p>
-
-  <div class="detail-grid">
-
-    <!-- ENV CARDS -->
-    <div class="detail-block">
-      <h3>&#127183; Environment Deck: 34 Cards</h3>
-      <p>Shuffled fresh every duel. One card drawn per step. Affects both duelists independently, but only until they fire. The longer you wait, the more the deck shapes your fate.</p>
-      <table class="card-table">
-        <tr><th>Card</th><th>Copies</th><th>Effect</th></tr>
-        <tr><td><strong>Damage Up</strong></td><td class="copies">7</td><td>+1 damage</td></tr>
-        <tr><td><strong>Damage Down</strong></td><td class="copies">5</td><td>-1 damage</td></tr>
-        <tr><td><strong>Chances Up</strong></td><td class="copies">7</td><td>+10% hit chance</td></tr>
-        <tr><td><strong>Chances Down</strong></td><td class="copies">5</td><td>-10% hit chance</td></tr>
-        <tr><td><strong>Double Damage Up</strong></td><td class="copies">3</td><td>+2 damage</td></tr>
-        <tr><td><strong>Double Chances Up</strong></td><td class="copies">3</td><td>+20% hit chance</td></tr>
-        <tr><td><strong style="color: var(--gold);">All Shots Hit</strong></td><td class="copies">1</td><td>100% hit from now on. Suppresses further chance mods.</td></tr>
-        <tr><td><strong style="color: var(--red);">All Shots Miss</strong></td><td class="copies">1</td><td>0% hit from now on. The anti-greed card.</td></tr>
-        <tr><td><strong style="color: #9b7dd4;">Double Tactics</strong></td><td class="copies">1</td><td>Your tactic card fires twice.</td></tr>
-        <tr><td><strong style="color: #9b7dd4;">No Tactics</strong></td><td class="copies">1</td><td>Your tactic card is erased.</td></tr>
-      </table>
-      <p style="margin-top: 12px; font-size: 0.95rem; font-style: normal; color: var(--cream);">20 positive. 10 negative. 4 specials. The deck is 2:1 in your favour; but All Shots Miss only needs to show up once.</p>
-    </div>
-
-    <!-- TACTICS CARDS -->
-    <div class="detail-block">
-      <h3>&#127183; Tactics: Pick 1 of 6</h3>
-      <p>Applied before the shooting starts. Shape the gunfight before the first step. No skip option; you commit to a tactic.</p>
-      <table class="card-table">
-        <tr><th>Card</th><th>Effect</th><th>Detail</th></tr>
-        <tr><td><strong>Insult</strong></td><td>Opponent -10% hit, +1 dmg to them</td><td>Rattles their aim; sharpens their anger.</td></tr>
-        <tr><td><strong>Coin Toss</strong></td><td>Blocks the first special env card</td><td>Insurance against All Shots Miss or No Tactics.</td></tr>
-        <tr><td><strong>Vengeful</strong></td><td>+1 damage to your shot</td><td>Straightforward. More powder, more pain.</td></tr>
-        <tr><td><strong>Thick Coat</strong></td><td>Opponent -1 damage</td><td>Their bullet hurts less. Sometimes not at all.</td></tr>
-        <tr><td><strong>Reversal</strong></td><td>Flips next negative env card to positive</td><td>Affects both duelists. Damage Down becomes Damage Up for everyone.</td></tr>
-        <tr><td><strong>Bananas</strong></td><td>Both players -10% hit</td><td>Mutual sabotage. Nobody aims well on a banana.</td></tr>
-      </table>
-    </div>
-
-    <!-- BLADES CARDS -->
-    <div class="detail-block">
-      <h3>&#9876;&#65039; Blades: Pick 1 of 4</h3>
-      <p>Blades do two jobs at once: modify your stats before the shots phase, and resolve as sudden-death if both survive. No skip. You bring a blade to every duel.</p>
-      <table class="card-table">
-        <tr><th>Card</th><th>Pre-Shot Effect</th><th>Clash</th><th>Strategy</th></tr>
-        <tr><td><strong style="color: var(--red);">Seppuku</strong></td><td>+20% hit, +1 damage</td><td>You always die</td><td>Strongest buff in the game. Win during shots or don't win at all.</td></tr>
-        <tr><td><strong style="color: #5865f2;">Pocket Pistol</strong></td><td>Opponent -10% hit</td><td>Beats Behead</td><td>Defensive. Reduces their accuracy before the first step.</td></tr>
-        <tr><td><strong style="color: var(--gold);">Behead</strong></td><td>+1 damage</td><td>Beats Grapple</td><td>Aggressive. Your shot hits harder.</td></tr>
-        <tr><td><strong style="color: #00cc77;">Grapple</strong></td><td>Opponent -1 damage</td><td>Beats Pocket Pistol</td><td>Can reduce opponent to 0 damage. Base is 1; Grapple makes it nothing.</td></tr>
-      </table>
-      <p style="margin-top: 12px; font-size: 0.95rem; font-style: normal; color: var(--cream);">Same card vs same: both die. Seppuku vs anything: Seppuku dies. The triangle: Pocket Pistol beats Behead beats Grapple beats Pocket Pistol.</p>
-    </div>
-
-  </div>
+  <p style="text-align: center; margin-top: 32px; font-size: 0.95rem; color: var(--cream-dim); font-style: italic;">Want the full mechanics? <a href="#card-reference" style="color: var(--gold);">See the card reference below</a>.</p>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════ -->
@@ -885,6 +857,68 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- CARD REFERENCE — moved from middle, deep-dive material  -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section id="card-reference">
+  <div class="eyebrow" style="text-align: center; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 10px;">Reference</div>
+  <h2>Card reference</h2>
+  <p class="sub">Full mechanics for players who want to go deep. Skim it now or come back to it before your first serious duel.</p>
+
+  <div class="detail-grid">
+
+    <!-- ENV CARDS -->
+    <div class="detail-block">
+      <h3>&#127183; Environment Deck: 34 Cards</h3>
+      <p>Shuffled fresh every duel. One card drawn per step. Affects both duelists independently, but only until they fire. The longer you wait, the more the deck shapes your fate.</p>
+      <table class="card-table">
+        <tr><th>Card</th><th>Copies</th><th>Effect</th></tr>
+        <tr><td><strong>Damage Up</strong></td><td class="copies">7</td><td>+1 damage</td></tr>
+        <tr><td><strong>Damage Down</strong></td><td class="copies">5</td><td>-1 damage</td></tr>
+        <tr><td><strong>Chances Up</strong></td><td class="copies">7</td><td>+10% hit chance</td></tr>
+        <tr><td><strong>Chances Down</strong></td><td class="copies">5</td><td>-10% hit chance</td></tr>
+        <tr><td><strong>Double Damage Up</strong></td><td class="copies">3</td><td>+2 damage</td></tr>
+        <tr><td><strong>Double Chances Up</strong></td><td class="copies">3</td><td>+20% hit chance</td></tr>
+        <tr><td><strong style="color: var(--gold);">All Shots Hit</strong></td><td class="copies">1</td><td>100% hit from now on. Suppresses further chance mods.</td></tr>
+        <tr><td><strong style="color: var(--red);">All Shots Miss</strong></td><td class="copies">1</td><td>0% hit from now on. The anti-greed card.</td></tr>
+        <tr><td><strong style="color: #9b7dd4;">Double Tactics</strong></td><td class="copies">1</td><td>Your tactic card fires twice.</td></tr>
+        <tr><td><strong style="color: #9b7dd4;">No Tactics</strong></td><td class="copies">1</td><td>Your tactic card is erased.</td></tr>
+      </table>
+      <p style="margin-top: 12px; font-size: 0.95rem; font-style: normal; color: var(--cream);">20 positive. 10 negative. 4 specials. The deck is 2:1 in your favour; but All Shots Miss only needs to show up once.</p>
+    </div>
+
+    <!-- TACTICS CARDS -->
+    <div class="detail-block">
+      <h3>&#127183; Tactics: Pick 1 of 6</h3>
+      <p>Applied before the shooting starts. Shape the gunfight before the first step. No skip option; you commit to a tactic.</p>
+      <table class="card-table">
+        <tr><th>Card</th><th>Effect</th><th>Detail</th></tr>
+        <tr><td><strong>Insult</strong></td><td>Opponent -10% hit, +1 dmg to them</td><td>Rattles their aim; sharpens their anger.</td></tr>
+        <tr><td><strong>Coin Toss</strong></td><td>Blocks the first special env card</td><td>Insurance against All Shots Miss or No Tactics.</td></tr>
+        <tr><td><strong>Vengeful</strong></td><td>+1 damage to your shot</td><td>Straightforward. More powder, more pain.</td></tr>
+        <tr><td><strong>Thick Coat</strong></td><td>Opponent -1 damage</td><td>Their bullet hurts less. Sometimes not at all.</td></tr>
+        <tr><td><strong>Reversal</strong></td><td>Flips next negative env card to positive</td><td>Affects both duelists. Damage Down becomes Damage Up for everyone.</td></tr>
+        <tr><td><strong>Bananas</strong></td><td>Both players -10% hit</td><td>Mutual sabotage. Nobody aims well on a banana.</td></tr>
+      </table>
+    </div>
+
+    <!-- BLADES CARDS -->
+    <div class="detail-block">
+      <h3>&#9876;&#65039; Blades: Pick 1 of 4</h3>
+      <p>Blades do two jobs at once: modify your stats before the shots phase, and resolve as sudden-death if both survive. No skip. You bring a blade to every duel.</p>
+      <table class="card-table">
+        <tr><th>Card</th><th>Pre-Shot Effect</th><th>Clash</th><th>Strategy</th></tr>
+        <tr><td><strong style="color: var(--red);">Seppuku</strong></td><td>+20% hit, +1 damage</td><td>You always die</td><td>Strongest buff in the game. Win during shots or don't win at all.</td></tr>
+        <tr><td><strong style="color: #5865f2;">Pocket Pistol</strong></td><td>Opponent -10% hit</td><td>Beats Behead</td><td>Defensive. Reduces their accuracy before the first step.</td></tr>
+        <tr><td><strong style="color: var(--gold);">Behead</strong></td><td>+1 damage</td><td>Beats Grapple</td><td>Aggressive. Your shot hits harder.</td></tr>
+        <tr><td><strong style="color: #00cc77;">Grapple</strong></td><td>Opponent -1 damage</td><td>Beats Pocket Pistol</td><td>Can reduce opponent to 0 damage. Base is 1; Grapple makes it nothing.</td></tr>
+      </table>
+      <p style="margin-top: 12px; font-size: 0.95rem; font-style: normal; color: var(--cream);">Same card vs same: both die. Seppuku vs anything: Seppuku dies. The triangle: Pocket Pistol beats Behead beats Grapple beats Pocket Pistol.</p>
+    </div>
+
   </div>
 </section>
 
